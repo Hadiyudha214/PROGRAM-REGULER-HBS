@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami — Al-Hidayah Boarding School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+   <link rel="icon" type="image/png" href="Logo/Logohbs.jpg">
+  <style>
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: linear-gradient(150deg, var(--green-dark) 0%, #285c3d 55%, var(--green-mid) 100%);
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M40 0l5 14h15l-12 9 5 14-13-9-13 9 5-14-12-9h15z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero-badge {
+      display: inline-block;
+      background: rgba(201,162,39,0.2);
+      border: 1px solid rgba(201,162,39,0.5);
+      color: var(--gold-light);
+      font-size: 11px;
+      padding: 5px 18px;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-hero-tagline {
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gold-light);
+    }
+
+    /* ===== PROFIL CONTENT ===== */
+    .profil-card {
+      background: white;
+      border: 1px solid #e0d9c8;
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .profil-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .profil-emblem {
+      width: 64px;
+      height: 64px;
+      background: var(--green-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: var(--gold-light);
+      flex-shrink: 0;
+    }
+    .profil-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+    .profil-header-text h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+    .profil-header-text span {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .profil-body p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+    .profil-body p:last-child {
+      margin-bottom: 0;
+    }
+    .profil-body em {
+      color: var(--green-mid);
+      font-style: italic;
+    }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight-box {
+      background: linear-gradient(135deg, var(--green-dark), #285c3d);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .highlight-box .hl-icon {
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+    .highlight-box .hl-text {
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gold-light);
+      line-height: 1.6;
+      font-family: 'Amiri', serif;
+      font-size: 18px;
+    }
+
+    /* ===== KEUNGGULAN ===== */
+    .keunggulan-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .keunggulan-card {
+      background: white;
+      border: 1px solid #e0d9c8;
+      border-left: 4px solid var(--green-mid);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .keunggulan-card .k-icon {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .keunggulan-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .keunggulan-card p {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ===== BACK LINKS ===== */
+    .back-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .back-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid #e0d9c8;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+    }
+    .back-links a:hover {
+      background: var(--green-dark);
+      color: var(--gold-light);
+      border-color: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 24px; }
+      .keunggulan-grid { grid-template-columns: 1fr; }
+      .profil-card { padding: 1.5rem; }
+      .highlight-box { flex-direction: column; text-align: center; }
+    }
+
+    .nav-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-logo">
+      <img src="Logo/Logohbs.jpg" alt="Logo HBS">
+    </div>
+    <div>
+      <div class="nav-title">PROGRAM REGULER HBS</div>
+      <div class="nav-subtitle">Al-Hidayah Boarding School</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="serba-serbi.html">Serba Serbi Program</a>
+    <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+    <a href="#">Bantuan</a>
+    <a href="tentang-kami.html" class="active">Tentang Kami</a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Beranda</a>
+  <a href="serba-serbi.html">Serba Serbi Program</a>
+  <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+  <a href="#">Bantuan</a>
+  <a href="tentang-kami.html">Tentang Kami</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">Al-Hidayah Boarding School · Kota Depok</div>
+    <h1>TENTANG KAMI</h1>
+    <div class="page-hero-tagline">"Membina Peserta Didik Menjadi Santri Mandiri &amp; Berkarakter"</div>
+  </div>
+</div>
+
+<!-- ===== PROFIL SINGKAT ===== -->
+<div class="section">
+  <div class="section-label">Profil Lembaga</div>
+  <div class="section-title">Al-Hidayah Boarding School</div>
+
+  <!-- Quote Box -->
+  <div class="highlight-box">
+    <div class="hl-icon">🕌</div>
+    <div class="hl-text">
+      "Membina Peserta Didik Menjadi Santri Mandiri &amp; Berkarakter"
+    </div>
+  </div>
+
+  <!-- Profil Card -->
+  <div class="profil-card">
+    <div class="profil-header">
+      <div class="profil-emblem">
+        <img src="Logo/Logohbs.jpg" alt="">
+      </div>
+      <div class="profil-header-text">
+        <h2>AL-HIDAYAH BOARDING SCHOOL<br>KOTA DEPOK</h2>
+        <span>Yayasan Al-Hidayah Rawadenok, Kota Depok</span>
+      </div>
+    </div>
+    <div class="profil-body">
+      <p>
+        <em>Al-Hidayah Boarding School (HBS)</em> merupakan lembaga pondok pesantren yang berada di bawah naungan
+        Yayasan Al-Hidayah Rawadenok Kota Depok. Lembaga yang berjarak ±2 KM dari Masjid Kubah Mas ini,
+        tidak hanya fokus menyelenggarakan pendidikan Islam pada pendalaman materi keagamaan saja, namun juga
+        sangat menekankan kepada para santrinya untuk menjunjung tinggi nilai-nilai etika dan budi pekerti yang
+        luhur untuk senantiasa ber-<em>akhlaqul karimah</em> dalam perilaku kesehariannya.
+      </p>
+      <p>
+        Salah satu dari keunggulan dalam manajemen sistem pendidikannya, <em>Al-Hidayah Boarding School</em>
+        berhasil menyandingkan dua metode sistem pondok pesantren yang ada di Indonesia ke dalam kurikulumnya,
+        yakni sistem pondok pesantren modern dan sistem pondok pesantren <em>salafiyah</em> (klasikal).
+        Oleh karena itu, keistimewaan dari pondok pesantren ini adalah, santri tidak hanya mampu dan cakap
+        dalam berbahasa asing secara lisan, namun sekaligus mampu menguasai dan memahami
+        <em>kutubut turats</em> (kitab kuning) secara mendalam dan komprehensif.
+      </p>
+    </div>
+  </div>
+
+  <!-- Keunggulan -->
+  <div class="section-label" style="margin-top: 2rem;">Keunggulan Kami</div>
+  <div class="section-title" style="margin-bottom: 20px;">Yang Membuat Kami Berbeda</div>
+
+  <div class="keunggulan-grid">
+    <div class="keunggulan-card">
+      <div class="k-icon">🌐</div>
+      <h4>Sistem Modern</h4>
+      <p>Santri terampil berbahasa asing secara lisan melalui metode pesantren modern yang terstruktur.</p>
+    </div>
+    <div class="keunggulan-card">
+      <div class="k-icon">📜</div>
+      <h4>Sistem Salafiyah</h4>
+      <p>Penguasaan <em>kutubut turats</em> (kitab kuning) secara mendalam dan komprehensif.</p>
+    </div>
+    <div class="keunggulan-card">
+      <div class="k-icon">🤝</div>
+      <h4>Akhlaqul Karimah</h4>
+      <p>Menanamkan nilai etika dan budi pekerti luhur dalam perilaku keseharian santri.</p>
+    </div>
+    <div class="keunggulan-card">
+      <div class="k-icon">🏫</div>
+      <h4>Lokasi Strategis</h4>
+      <p>Berlokasi di Rawadenok, ±2 KM dari Masjid Kubah Mas, Kota Depok.</p>
+    </div>
+  </div>
+
+  <!-- Back Links -->
+  <div style="margin-top: 2.5rem;">
+    <div class="section-label">Navigasi</div>
+    <div class="back-links" style="margin-top: 12px;">
+      <a href="index.html">🏠 Kembali ke Beranda</a>
+      <a href="https://forms.gle/xA7U3Purb3aePyvS9" target="_blank">✍️ Kritik &amp; Saran</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-ar">﷽</div>
+  <div class="footer-links">
+    <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+    <a href="#">Bantuan</a>
+    <a href="tentang-kami.html">Tentang Kami</a>
+    <a href="serba-serbi.html">Serba Serbi Program</a>
+  </div>
+  <div class="footer-copy">
+    Copyright &copy; 2021 All Rights Reserved &nbsp;|&nbsp; Al-Hidayah Boarding School, Kota Depok
+  </div>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serba Serbi Program — Al-Hidayah Boarding School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Logo/Logohbs.jpg">
+  <style>
+    /* ===== PAGE HERO (lebih kecil dari hero utama) ===== */
+    .page-hero {
+      background: linear-gradient(150deg, var(--green-dark) 0%, #285c3d 55%, var(--green-mid) 100%);
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M40 0l5 14h15l-12 9 5 14-13-9-13 9 5-14-12-9h15z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero-badge {
+      display: inline-block;
+      background: rgba(201,162,39,0.2);
+      border: 1px solid rgba(201,162,39,0.5);
+      color: var(--gold-light);
+      font-size: 11px;
+      padding: 5px 18px;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .page-hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+    }
+
+    /* ===== MENU GRID ===== */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .menu-card {
+      background: white;
+      border: 1px solid #e0d9c8;
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--gold);
+      border-radius: 12px 0 0 12px;
+    }
+    .menu-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      border-color: var(--gold-light);
+    }
+
+    .menu-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--cream-dark);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .menu-card:hover .menu-icon {
+      background: rgba(201,162,39,0.15);
+    }
+
+    .menu-text {
+      flex: 1;
+    }
+    .menu-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .menu-desc {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .menu-arrow {
+      color: var(--gold);
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .menu-card:hover .menu-arrow {
+      transform: translateX(4px);
+    }
+
+    /* tag "Segera Hadir" */
+    .tag-soon {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 24px; }
+      .menu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-logo">
+      <img src="Logo/Logohbs.jpg" alt="">
+    </div>
+    <div>
+      <div class="nav-title">PROGRAM REGULER HBS</div>
+      <div class="nav-subtitle">Al-Hidayah Boarding School</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="serba-serbi.html" class="active">Serba Serbi Program</a>
+    <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+    <a href="#">Bantuan</a>
+    <a href="tentang-kami.html">Tentang Kami</a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Beranda</a>
+  <a href="serba-serbi.html">Serba Serbi Program</a>
+  <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+  <a href="#">Bantuan</a>
+  <a href="tentang-kami.html">Tentang Kami</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">Al-Hidayah Boarding School · Kota Depok</div>
+    <h1>SERBA SERBI PROGRAM</h1>
+    <div class="page-hero-sub">Informasi lengkap seputar Program Reguler HBS</div>
+  </div>
+</div>
+
+<!-- ===== MENU ===== -->
+<div class="section">
+  <div class="section-label">Navigasi Program</div>
+  <div class="section-title">Daftar Menu</div>
+
+  <div class="menu-grid">
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">📚</div>
+      <div class="menu-text">
+        <div class="menu-title">Semester Ganjil</div>
+        <div class="menu-desc">GMP & Penilaian Santri Smt. 1 (2025/2026)</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">📖</div>
+      <div class="menu-text">
+        <div class="menu-title">Semester Genap</div>
+        <div class="menu-desc">GMP & Penilaian Santri Smt. 2 (2025/2026)</div>
+        <div class="tag-soon">Segera Hadir</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">🎓</div>
+      <div class="menu-text">
+        <div class="menu-title">Kegiatan Kelas Akhir</div>
+        <div class="menu-desc">Program kegiatan kelas akhir 2025/2026</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">📕</div>
+      <div class="menu-text">
+        <div class="menu-title">Buku Pedoman Reguler</div>
+        <div class="menu-desc">BPD Tahun Ajaran 2025/2026</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="https://docs.google.com/forms/d/e/1FAIpQLScxGSTZX94YsarTLlN7oPX_KnLRelNQchuviSVKegyjwm7PTQ/viewform" target="_blank">
+      <div class="menu-icon">📝</div>
+      <div class="menu-text">
+        <div class="menu-title">Observasi Nilai Sikap Santri</div>
+        <div class="menu-desc">Form pengisian observasi nilai sikap</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">🗣️</div>
+      <div class="menu-text">
+        <div class="menu-title">Syafahi &amp; Muhafazhah</div>
+        <div class="menu-desc">Jadwal & informasi ujian lisan</div>
+        <div class="tag-soon">Segera Hadir</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">👨‍🏫</div>
+      <div class="menu-text">
+        <div class="menu-title">Wali Kelas</div>
+        <div class="menu-desc">Daftar wali kelas tahun 2025/2026</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="#">
+      <div class="menu-icon">📋</div>
+      <div class="menu-text">
+        <div class="menu-title">Absensi Santri</div>
+        <div class="menu-desc">Rekap absensi santri 2025/2026</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+    <a class="menu-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfRn1T_9KAdXoZuW_9hl3lhC-sr0VWH1fZ1M4C1a5yrJzY03g/viewform?usp=send_form" target="_blank">
+      <div class="menu-icon">🔑</div>
+      <div class="menu-text">
+        <div class="menu-title">Link Perizinan GMP</div>
+        <div class="menu-desc">Form perizinan guru diniyah online</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-ar">﷽</div>
+  <div class="footer-links">
+    <a href="https://forms.gle/XUpbcNNKYqb6Xr7v5" target="_blank">Kritik &amp; Saran</a>
+    <a href="#">Bantuan</a>
+    <a href="#">Tentang Kami</a>
+    <a href="serba-serbi.html">Serba Serbi Program</a>
+  </div>
+  <div class="footer-copy">
+    Copyright &copy; 2021 All Rights Reserved &nbsp;|&nbsp; Al-Hidayah Boarding School, Kota Depok
+  </div>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
